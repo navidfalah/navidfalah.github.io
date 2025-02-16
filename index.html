@@ -29,51 +29,58 @@
         <p class="text-lg mt-4">Explore my projects, blogs, and resume in one place.</p>
     </section>
 
-    <section id="about" class="bg-white shadow-md rounded-lg p-6 max-w-3xl mx-auto my-10">
+    <section id="about" class="bg-white shadow-md rounded-lg p-6 max-w-3xl mx-auto my-10 text-center">
         <h2 class="text-2xl font-semibold">About Me 👨‍💻</h2>
         <p class="mt-4 text-lg">I'm Navid, a passionate software developer and AI enthusiast. I love building innovative projects, writing about my experiences, and exploring the latest in technology.</p>
         <p class="mt-4">📧 Email: <a href="mailto:navid.falah7@gmail.com" class="text-blue-600 hover:underline">navid.falah7@gmail.com</a></p>
         <p>💻 GitHub: <a href="https://github.com/navidfalah" class="text-blue-600 hover:underline" target="_blank">navidfalah</a></p>
         <p>🏫 University: Amirkabir University of Technology</p>
-        <p class="mt-4"><a href="assets/resume.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700">📄 Download My Resume</a></p>
+        <div class="mt-6 flex justify-center space-x-4">
+            <a href="assets/resume-en.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 flex items-center space-x-2">
+                <span>📄 English Resume</span> <img src="assets/us-flag.png" alt="US Flag" class="w-6 h-4">
+            </a>
+            <a href="assets/resume-de.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 flex items-center space-x-2">
+                <span>📄 German Resume</span> <img src="assets/germany-flag.png" alt="Germany Flag" class="w-6 h-4">
+            </a>
+        </div>
     </section>
 
     <section id="blog" class="py-16 px-6">
         <h2 class="text-3xl font-semibold text-center">Blog Posts ✍️</h2>
-        <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-w-6xl mx-auto">
-            <script>
-                const posts = [
-                    { title: "My First Blog Post", link: "https://example.com/post1", date: "2025-02-16", content: "This post shares my thoughts and experiences on starting my blog and portfolio website." },
-                    { title: "How I Built This Website", link: "https://example.com/post2", date: "2025-02-17", content: "A step-by-step guide on how I built my static website using HTML, Tailwind CSS, and JavaScript." },
-                ];
-                const container = document.getElementById("posts-container");
-                function timeSince(date) {
-                    const postDate = new Date(date);
-                    const now = new Date();
-                    const diff = Math.floor((now - postDate) / (1000 * 60 * 60 * 24));
-                    return diff === 0 ? "Today" : `${diff} days ago`;
-                }
-                posts.forEach(post => {
-                    const postEl = document.createElement("div");
-                    postEl.className = "bg-white shadow-md rounded-lg overflow-hidden p-4";
-                    postEl.innerHTML = `
+        <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-w-6xl mx-auto"></div>
+        <script>
+            const posts = [
+                { title: "My First Blog Post", link: "https://example.com/post1", date: "2025-02-16", content: "This post shares my thoughts and experiences on starting my blog and portfolio website." },
+                { title: "How I Built This Website", link: "https://example.com/post2", date: "2025-02-17", content: "A step-by-step guide on how I built my static website using HTML, Tailwind CSS, and JavaScript." },
+                { title: "Exploring AI Trends", link: "https://example.com/post3", date: "2025-02-18", content: "A deep dive into the latest AI trends and technologies." },
+                { title: "My Favorite Coding Tools", link: "https://example.com/post4", date: "2025-02-19", content: "A list of essential coding tools I use every day." },
+                { title: "Understanding Quantum Computing", link: "https://example.com/post5", date: "2025-02-20", content: "An introduction to quantum computing and its potential." },
+                { title: "How to Optimize Code", link: "https://example.com/post6", date: "2025-02-21", content: "Best practices for writing optimized and efficient code." },
+            ];
+            function timeSince(date) {
+                const postDate = new Date(date);
+                const now = new Date();
+                const diff = Math.floor((now - postDate) / (1000 * 60 * 60 * 24));
+                return diff === 0 ? "Today" : `${diff} days ago`;
+            }
+            posts.forEach(post => {
+                document.getElementById("posts-container").innerHTML += `
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden p-4">
                         <h3 class="text-xl font-semibold">
                             <a href="${post.link}" class="text-blue-600 hover:underline" target="_blank">${post.title}</a>
                         </h3>
                         <p class="text-gray-600 text-sm mt-2">📅 ${post.date} - 🕒 ${timeSince(post.date)}</p>
                         <p class="mt-2 text-gray-700">${post.content}</p>
-                    `;
-                    container.appendChild(postEl);
-                });
-            </script>
-        </div>
+                    </div>`;
+            });
+        </script>
     </section>
 
     <footer id="contact" class="bg-blue-900 text-white text-center py-6 mt-10">
         <div class="flex justify-center space-x-6 mb-4">
-            <a href="https://linkedin.com/in/navidfalah" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn" class="w-8 h-8"></a>
-            <a href="https://twitter.com/navidfalah" target="_blank"><img src="assets/twitter.png" alt="Twitter" class="w-8 h-8"></a>
-            <a href="https://github.com/navidfalah" target="_blank"><img src="assets/github.png" alt="GitHub" class="w-8 h-8"></a>
+            <a href="https://linkedin.com/in/navidfalah" target="_blank">🔗 LinkedIn</a>
+            <a href="https://twitter.com/navidfalah" target="_blank">🐦 Twitter</a>
+            <a href="https://github.com/navidfalah" target="_blank">🐙 GitHub</a>
         </div>
         <p>&copy; 2025 Navid Falah | <a href="mailto:navid.falah7@gmail.com" class="underline">📩 Contact Me</a></p>
     </footer>
