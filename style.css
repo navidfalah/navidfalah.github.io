@@ -1,104 +1,48 @@
-/* General Styles */
+/* style.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+    @apply bg-blue-50 text-gray-900;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Header */
 header {
-  background: #007BFF;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+    @apply bg-blue-900 text-white py-5 text-center;
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
+    @apply flex justify-center space-x-6;
 }
 
 nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+    @apply text-white font-semibold hover:underline;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+.section {
+    @apply max-w-4xl mx-auto py-12 px-6 bg-white shadow-lg rounded-lg;
 }
 
-/* Blog Posts */
-#blog-posts {
-  margin: 2rem 0;
+#posts-container {
+    @apply flex flex-wrap justify-center;
 }
 
-.blog-card {
-  background: #fff;
-  padding: 1.5rem;
-  margin: 1rem 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.post-card {
+    @apply bg-white shadow-md rounded-lg p-4 m-4 w-full md:w-1/3;
 }
 
-.blog-card:hover {
-  transform: translateY(-5px);
+.post-card img {
+    @apply w-full h-48 object-cover rounded-t-lg;
 }
 
-.blog-card h3 {
-  margin-top: 0;
-  color: #007BFF;
+.post-card h3 {
+    @apply text-xl font-bold text-blue-900 mt-2;
 }
 
-.blog-card p {
-  margin: 0.5rem 0;
+.post-card p {
+    @apply text-gray-500;
 }
 
-.read-more {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #007BFF;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.3s ease;
-}
-
-.read-more:hover {
-  background: #0056b3;
-}
-
-/* Footer */
 footer {
-  background: #007BFF;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-}
-
-footer p {
-  margin: 0;
+    @apply bg-blue-900 text-white text-center py-4 mt-10;
 }
