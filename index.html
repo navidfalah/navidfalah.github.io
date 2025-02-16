@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Website</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navid's Blog & Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Welcome to My Website</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="resume.html">Resume</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <h1>Navid Falah</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main class="container">
-    <section id="blog-posts">
-      <h2>Latest Blog Posts</h2>
-      <div class="blog-card">
-        <h3>Blog Post 1</h3>
-        <p>Published on: October 1, 2023</p>
-        <p>This is a short preview of blog post 1. Click "Read More" to see the full post.</p>
-        <a href="blog/post1.html" class="read-more">Read More</a>
-      </div>
-
-      <div class="blog-card">
-        <h3>Blog Post 2</h3>
-        <p>Published on: October 5, 2023</p>
-        <p>This is a short preview of blog post 2. Click "Read More" to see the full post.</p>
-        <a href="blog/post2.html" class="read-more">Read More</a>
-      </div>
-
-      <div class="blog-card">
-        <h3>Blog Post 3</h3>
-        <p>Published on: October 10, 2023</p>
-        <p>This is a short preview of blog post 3. Click "Read More" to see the full post.</p>
-        <a href="blog/post3.html" class="read-more">Read More</a>
-      </div>
+    <section id="home" class="section">
+        <h2>Welcome to My Space</h2>
+        <p>Explore my projects, blogs, and resume in one place.</p>
     </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 Your Name</p>
-    </div>
-  </footer>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Email: <a href="mailto:navid.falah7@gmail.com">navid.falah7@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/navidfalah" target="_blank">navidfalah</a></p>
+        <p><a href="assets/resume.pdf" download>Download My Resume</a></p>
+    </section>
+
+    <section id="blog" class="section">
+        <h2>Blog Posts</h2>
+        <div id="posts-container">
+            <!-- Blog posts will be loaded dynamically -->
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2025 Navid Falah | <a href="mailto:navid.falah7@gmail.com">Contact Me</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const posts = [
+                { title: "My First Blog Post", date: "2025-02-16", link: "post1.html" },
+                { title: "How I Built This Website", date: "2025-02-17", link: "post2.html" }
+            ];
+            const container = document.getElementById("posts-container");
+            posts.forEach(post => {
+                const postElement = document.createElement("div");
+                postElement.innerHTML = `<h3><a href="${post.link}">${post.title}</a></h3><p>${post.date}</p>`;
+                container.appendChild(postElement);
+            });
+        });
+    </script>
 </body>
 </html>
