@@ -6,14 +6,16 @@
     <title>Navid's Blog & Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
 </head>
 <body class="bg-blue-50 text-gray-900">
     <header class="relative bg-blue-900 text-white py-10 text-center shadow-lg flex flex-col items-center">
-        <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('header.jpg');"></div>
-        <img src="navid.png" alt="Navid's Picture" class="w-24 h-24 rounded-full border-4 border-white relative z-10">
+        <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('assets/header-bg.jpg');"></div>
+        <img src="assets/profile.jpg" alt="Navid's Picture" class="w-20 h-20 rounded-full border-4 border-white relative z-10">
         <h1 class="text-4xl font-bold relative z-10 mt-4">Navid Falah</h1>
         <p class="relative z-10 text-lg mt-2">📍 Currently in Germany | 🎓 Amirkabir University of Technology</p>
         <p class="relative z-10 text-lg">📧 <a href="mailto:navid.falah7@gmail.com" class="text-blue-300 hover:underline">navid.falah7@gmail.com</a></p>
+        <p class="relative z-10 text-lg mt-1">🟢 Looking for a Job</p>
         <nav class="mt-4 relative z-10">
             <ul class="flex justify-center space-x-6 text-lg">
                 <li><a href="#home" class="hover:underline">Home</a></li>
@@ -24,11 +26,6 @@
         </nav>
     </header>
 
-    <section id="home" class="text-center py-16 px-6">
-        <h2 class="text-3xl font-semibold">Welcome to My Space 🚀</h2>
-        <p class="text-lg mt-4">Explore my projects, blogs, and resume in one place.</p>
-    </section>
-
     <section id="about" class="bg-white shadow-md rounded-lg p-6 max-w-3xl mx-auto my-10 text-center">
         <h2 class="text-2xl font-semibold">About Me 👨‍💻</h2>
         <p class="mt-4 text-lg">I'm Navid, a passionate software developer and AI enthusiast. I love building innovative projects, writing about my experiences, and exploring the latest in technology.</p>
@@ -36,46 +33,14 @@
         <p>💻 GitHub: <a href="https://github.com/navidfalah" class="text-blue-600 hover:underline" target="_blank">navidfalah</a></p>
         <p>🏫 University: Amirkabir University of Technology</p>
         <div class="mt-6 flex justify-center space-x-4">
-            <a href="https://github.com/navidfalah/navidfalah.github.io/blob/d17edda88d3e733f071316ce4646a7c903b2d6fc/cv.en.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 flex items-center space-x-2">
-                <span>English Resume</span> <span>🇬🇧</span>
+            <a href="https://github.com/navidfalah/portfolio/raw/main/assets/resume-en.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 flex items-center space-x-2">
+                <span>📄 English Resume</span> <img src="assets/us-flag.png" alt="US Flag" class="w-6 h-4">
             </a>
-            <a href="https://github.com/navidfalah/navidfalah.github.io/blob/d17edda88d3e733f071316ce4646a7c903b2d6fc/cv.de.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 flex items-center space-x-2">
-                <span>German Resume</span> <span>🇩🇪</span>
+            <a href="https://github.com/navidfalah/portfolio/raw/main/assets/resume-de.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 flex items-center space-x-2">
+                <span>📄 German Resume</span> <img src="assets/germany-flag.png" alt="Germany Flag" class="w-6 h-4">
             </a>
         </div>
     </section>
-
-    <section id="blog" class="py-16 px-6">
-        <h2 class="text-3xl font-semibold text-center">Blog Posts ✍️</h2>
-        <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-w-6xl mx-auto"></div>
-        <script>
-            const posts = [
-                { title: "My First Blog Post", link: "https://example.com/post1", date: "2025-02-16", content: "This post shares my thoughts and experiences on starting my blog and portfolio website." },
-                { title: "How I Built This Website", link: "https://example.com/post2", date: "2025-02-17", content: "A step-by-step guide on how I built my static website using HTML, Tailwind CSS, and JavaScript." },
-                { title: "Exploring AI Trends", link: "https://example.com/post3", date: "2025-02-18", content: "A deep dive into the latest AI trends and technologies." },
-                { title: "My Favorite Coding Tools", link: "https://example.com/post4", date: "2025-02-19", content: "A list of essential coding tools I use every day." },
-                { title: "Understanding Quantum Computing", link: "https://example.com/post5", date: "2025-02-20", content: "An introduction to quantum computing and its potential." },
-                { title: "How to Optimize Code", link: "https://example.com/post6", date: "2025-02-21", content: "Best practices for writing optimized and efficient code." },
-            ];
-            function timeSince(date) {
-                const postDate = new Date(date);
-                const now = new Date();
-                const diff = Math.floor((now - postDate) / (1000 * 60 * 60 * 24));
-                return diff === 0 ? "Today" : `${diff} days ago`;
-            }
-            posts.forEach(post => {
-                document.getElementById("posts-container").innerHTML += `
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden p-4">
-                        <h3 class="text-xl font-semibold">
-                            <a href="${post.link}" class="text-blue-600 hover:underline" target="_blank">${post.title}</a>
-                        </h3>
-                        <p class="text-gray-600 text-sm mt-2">📅 ${post.date} - 🕒 ${timeSince(post.date)}</p>
-                        <p class="mt-2 text-gray-700">${post.content}</p>
-                    </div>`;
-            });
-        </script>
-    </section>
-
 
     <footer id="contact" class="bg-blue-900 text-white text-center py-6 mt-10">
         <div class="flex justify-center space-x-6 mb-4">
@@ -85,6 +50,5 @@
         </div>
         <p>&copy; 2025 Navid Falah | <a href="mailto:navid.falah7@gmail.com" class="underline">📩 Contact Me</a></p>
     </footer>
-    
 </body>
 </html>
