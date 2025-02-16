@@ -4,57 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navid's Blog & Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <h1>Navid Falah</h1>
+<body class="bg-blue-50 text-gray-900">
+    <header class="bg-blue-900 text-white py-5 text-center">
+        <h1 class="text-3xl font-bold">Navid Falah</h1>
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="flex justify-center space-x-6">
+                <li><a href="#home" class="hover:underline">Home</a></li>
+                <li><a href="#about" class="hover:underline">About</a></li>
+                <li><a href="#blog" class="hover:underline">Blog</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="section">
-        <h2>Welcome to My Space</h2>
+        <h2 class="text-2xl font-semibold">Welcome to My Space</h2>
         <p>Explore my projects, blogs, and resume in one place.</p>
     </section>
 
     <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>Email: <a href="mailto:navid.falah7@gmail.com">navid.falah7@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/navidfalah" target="_blank">navidfalah</a></p>
-        <p><a href="assets/resume.pdf" download>Download My Resume</a></p>
+        <h2 class="text-2xl font-semibold">About Me</h2>
+        <p>Email: <a href="mailto:navid.falah7@gmail.com" class="text-blue-600">navid.falah7@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/navidfalah" class="text-blue-600" target="_blank">navidfalah</a></p>
+        <p><a href="assets/resume.pdf" download class="bg-blue-600 text-white px-4 py-2 rounded-md">Download My Resume</a></p>
     </section>
 
     <section id="blog" class="section">
-        <h2>Blog Posts</h2>
-        <div id="posts-container">
+        <h2 class="text-2xl font-semibold">Blog Posts</h2>
+        <div id="posts-container" class="flex flex-wrap justify-center">
             <!-- Blog posts will be loaded dynamically -->
         </div>
     </section>
 
-    <footer id="contact">
-        <p>&copy; 2025 Navid Falah | <a href="mailto:navid.falah7@gmail.com">Contact Me</a></p>
+    <footer id="contact" class="bg-blue-900 text-white text-center py-4 mt-10">
+        <p>&copy; 2025 Navid Falah | <a href="mailto:navid.falah7@gmail.com" class="underline">Contact Me</a></p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const posts = [
-                { title: "My First Blog Post", date: "2025-02-16", link: "post1.html" },
-                { title: "How I Built This Website", date: "2025-02-17", link: "post2.html" }
-            ];
-            const container = document.getElementById("posts-container");
-            posts.forEach(post => {
-                const postElement = document.createElement("div");
-                postElement.innerHTML = `<h3><a href="${post.link}">${post.title}</a></h3><p>${post.date}</p>`;
-                container.appendChild(postElement);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
