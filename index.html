@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-blue-50 text-gray-900">
-    <header class="bg-blue-900 text-white py-5 text-center">
-        <h1 class="text-3xl font-bold">Navid Falah</h1>
-        <nav>
-            <ul class="flex justify-center space-x-6">
+    <header class="relative bg-blue-900 text-white py-6 text-center shadow-lg flex flex-col items-center">
+        <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('assets/header-bg.jpg');"></div>
+        <img src="assets/profile.jpg" alt="Navid's Picture" class="w-24 h-24 rounded-full border-4 border-white relative z-10">
+        <h1 class="text-4xl font-bold relative z-10 mt-4">Navid Falah</h1>
+        <nav class="mt-4 relative z-10">
+            <ul class="flex justify-center space-x-6 text-lg">
                 <li><a href="#home" class="hover:underline">Home</a></li>
                 <li><a href="#about" class="hover:underline">About</a></li>
                 <li><a href="#blog" class="hover:underline">Blog</a></li>
@@ -20,29 +22,61 @@
         </nav>
     </header>
 
-    <section id="home" class="section">
-        <h2 class="text-2xl font-semibold">Welcome to My Space</h2>
-        <p>Explore my projects, blogs, and resume in one place.</p>
+    <section id="home" class="text-center py-16 px-6">
+        <h2 class="text-3xl font-semibold">Welcome to My Space</h2>
+        <p class="text-lg mt-4">Explore my projects, blogs, and resume in one place.</p>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="bg-white shadow-md rounded-lg p-6 max-w-3xl mx-auto my-10">
         <h2 class="text-2xl font-semibold">About Me</h2>
-        <p>Email: <a href="mailto:navid.falah7@gmail.com" class="text-blue-600">navid.falah7@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/navidfalah" class="text-blue-600" target="_blank">navidfalah</a></p>
-        <p><a href="assets/resume.pdf" download class="bg-blue-600 text-white px-4 py-2 rounded-md">Download My Resume</a></p>
+        <p class="mt-4">Email: <a href="mailto:navid.falah7@gmail.com" class="text-blue-600 hover:underline">navid.falah7@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/navidfalah" class="text-blue-600 hover:underline" target="_blank">navidfalah</a></p>
+        <p class="mt-4"><a href="assets/resume.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700">Download My Resume</a></p>
     </section>
 
-    <section id="blog" class="section">
-        <h2 class="text-2xl font-semibold">Blog Posts</h2>
-        <div id="posts-container" class="flex flex-wrap justify-center">
-            <!-- Blog posts will be loaded dynamically -->
+    <section id="blog" class="py-16 px-6">
+        <h2 class="text-3xl font-semibold text-center">Blog Posts</h2>
+        <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-w-6xl mx-auto">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/400" alt="My First Blog Post" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">
+                        <a href="https://example.com/post1" class="text-blue-600 hover:underline" target="_blank">My First Blog Post</a>
+                    </h3>
+                    <p class="text-gray-600 text-sm mt-2">2025-02-16</p>
+                    <p class="mt-2 text-gray-700">This post shares my thoughts and experiences on starting my blog and portfolio website.</p>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/400" alt="How I Built This Website" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">
+                        <a href="https://example.com/post2" class="text-blue-600 hover:underline" target="_blank">How I Built This Website</a>
+                    </h3>
+                    <p class="text-gray-600 text-sm mt-2">2025-02-17</p>
+                    <p class="mt-2 text-gray-700">A step-by-step guide on how I built my static website using HTML, Tailwind CSS, and JavaScript.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-blue-900 text-white text-center py-4 mt-10">
+    <footer id="contact" class="bg-blue-900 text-white text-center py-6 mt-10">
         <p>&copy; 2025 Navid Falah | <a href="mailto:navid.falah7@gmail.com" class="underline">Contact Me</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const header = document.querySelector("header");
+            header.classList.add("transition-all", "duration-500", "ease-in-out");
+            
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 50) {
+                    header.classList.add("shadow-xl", "bg-blue-800");
+                } else {
+                    header.classList.remove("shadow-xl", "bg-blue-800");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
